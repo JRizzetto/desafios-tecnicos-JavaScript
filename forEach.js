@@ -9,27 +9,27 @@ You have an array of tasks. Each task has a description and a completed status.
 2 - At the end, print the number of completed tasks.
 */
 
-const tasks = [
-  { description: "Wash dishes", completed: true },
-  { description: "Take out trash", completed: false },
-  { description: "Do homework", completed: true },
-  { description: "Feed the dog", completed: false },
-];
+// const tasks = [
+//   { description: "Wash dishes", completed: true },
+//   { description: "Take out trash", completed: false },
+//   { description: "Do homework", completed: true },
+//   { description: "Feed the dog", completed: false },
+// ];
 
-let completTask = 0;
+// let completTask = 0;
 
-tasks.forEach((element, index) => {
-  console.log(
-    `${index + 1}. ${element.description} - ${
-      element.completed ? "Completed" : "Not completed"
-    }`
-  );
+// tasks.forEach((element, index) => {
+//   console.log(
+//     `${index + 1}. ${element.description} - ${
+//       element.completed ? "Completed" : "Not completed"
+//     }`
+//   );
 
-  if (element.completed) {
-    completTask++;
-  }
-});
-console.log(`Number of completed tasks: ${completTask}`);
+//   if (element.completed) {
+//     completTask++;
+//   }
+// });
+// console.log(`Number of completed tasks: ${completTask}`);
 
 // ----------------------------------------------------------------------------------------------
 // ----------------------------------------------------------------------------------------------
