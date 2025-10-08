@@ -1,20 +1,62 @@
-/* Exercise 8 – Online Course Progress
-You’re given a list of students and the courses they’re taking.
-Each course includes how many lessons it has and how many lessons the student has completed.
+/* Exercise 9 – Bank Transactions
+You have a list of bank accounts, and each account contains an array of transactions (positive values = deposits, negative = withdrawals).
 Your tasks:
-1 - Find only the students who are actively studying (active = true).
-2 - For each active student, calculate their average completion percentage across all their courses.
-3 - Return a list like this:
+1 - Keep only active accounts (active: true).
+2 - For each active account, calculate the final balance (sum of all transactions).
+3 - Return a new array like this:
+4 - Then calculate the total money in the bank (sum of all balances from active accounts).
 */
 
-const numbers = [3, 8, 12, 5, 20, 7, 15];
+// const accounts = [
+//   {
+//     name: "Alice",
+//     active: true,
+//     transactions: [1000, -200, 500, -100],
+//   },
+//   {
+//     name: "Bob",
+//     active: false,
+//     transactions: [2000, -500, -100],
+//   },
+//   {
+//     name: "Charlie",
+//     active: true,
+//     transactions: [1500, -700, 300],
+//   },
+//   {
+//     name: "David",
+//     active: true,
+//     transactions: [800, -200, 200],
+//   },
+// ];
 
+// const activeAcount = accounts.filter((account) => account.active);
+
+// const finalBalance = activeAcount.map((account) => {
+//   const balance = account.transactions.reduce(
+//     (acc, value) => (acc += value),
+//     0
+//   );
+
+//   return {
+//     name: account.name,
+//     balance: balance,
+//   };
+// });
+
+// console.log(finalBalance);
+
+// const totalMoney = finalBalance.reduce(
+//   (acc, account) => acc + account.balance,
+//   0
+// );
+
+// console.log(totalMoney);
 
 // ----------------------------------------------------------------------------------------------
 // ----------------------------------------------------------------------------------------------
 // ----------------------------------------------------------------------------------------------
 // ----------------------------------------------------------------------------------------------
-
 
 /* Exercise 8 – Online Course Progress
 You’re given a list of students and the courses they’re taking.
