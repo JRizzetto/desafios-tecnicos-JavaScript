@@ -38,9 +38,9 @@ employees.forEach((element, index, array) => {
   );
 });
 
-// console.log(
-//   `Above expectation: ${highExpectation} \nBetween expectation ${mediaExpectation} \nLow Expectation ${lowExpectation}`
-// );
+console.log(
+  `Above expectation: ${highExpectation} \nBetween expectation ${mediaExpectation} \nLow Expectation ${lowExpectation}`
+);
 
 // ----------------------------------------------------------------------------------------------
 // ----------------------------------------------------------------------------------------------
