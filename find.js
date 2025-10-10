@@ -1,3 +1,39 @@
+/* 4 - Exercise – Find the First Late Delivery
+You have a list of orders from an online store.
+Each order has a customer name, delivery status, and delivery days (how many days it took to deliver).
+
+1 - Find the first order that was late, meaning it took more than 7 days to deliver and the status is "delivered".
+
+If you find a late delivery, print something like:
+"No late deliveries found"
+*/
+// const orders = [
+//   { customer: "Alice", delivered: true, deliveryDays: 5 },
+//   { customer: "Bob", delivered: false, deliveryDays: 9 },
+//   { customer: "Charlie", delivered: true, deliveryDays: 10 },
+//   { customer: "David", delivered: true, deliveryDays: 6 },
+//   { customer: "Eve", delivered: true, deliveryDays: 8 },
+// ];
+
+// const deliveryLate = orders.find((order) => {
+//   order.delivered && order.deliveryDays > 7;
+
+//   console.log()
+// });
+
+// console.log(
+//   deliveryLate
+//     ? `Customer: ${deliveryLate.customer} - Delivered in ${deliveryLate.deliveryDays} days
+// `
+//     : `No late deliveries found
+// `
+// );
+
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+
 /* 3 - Exercise — “Find the Eligible Customer”
 You have an array of customers. Each customer has:
 
@@ -10,27 +46,26 @@ isPremium → boolean
 2 - Print the customer’s name, age, and number of purchases.
 3 - If no customer matches, print "No eligible customer found".
 */
+// const customers = [
+//   { name: "Alice", age: 17, purchases: 6, isPremium: false },
+//   { name: "Bob", age: 25, purchases: 3, isPremium: false },
+//   { name: "Charlie", age: 30, purchases: 10, isPremium: true },
+//   { name: "David", age: 22, purchases: 5, isPremium: false },
+//   { name: "Eve", age: 28, purchases: 2, isPremium: false },
+// ];
 
-const customers = [
-  { name: "Alice", age: 17, purchases: 6, isPremium: false },
-  { name: "Bob", age: 25, purchases: 3, isPremium: false },
-  { name: "Charlie", age: 30, purchases: 10, isPremium: true },
-  { name: "David", age: 22, purchases: 5, isPremium: false },
-  { name: "Eve", age: 28, purchases: 2, isPremium: false },
-];
+// const filterCustumer = customers.find((element, index, array) => {
+//   const resultVar =
+//     element.age >= 18 && element.purchases >= 5 && !element.isPremium;
 
-const filterCustumer = customers.find((element, index, array) => {
-  const resultVar =
-    element.age >= 18 && element.purchases >= 5 && !element.isPremium;
+//   return resultVar;
+// });
 
-  return resultVar;
-});
+// const customerResult = filterCustumer
+//   ? `Name: ${filterCustumer.name} - Age: ${filterCustumer.age} - Number: ${filterCustumer.purchases}`
+//   : "No eligible customer found";
 
-const customerResult = filterCustumer
-  ? `Name: ${filterCustumer.name} - Age: ${filterCustumer.age} - Number: ${filterCustumer.purchases}`
-  : "No eligible customer found";
-
-console.log(customerResult);
+// console.log(customerResult);
 //
 
 // ----------------------------------------------------------------------------------------------
