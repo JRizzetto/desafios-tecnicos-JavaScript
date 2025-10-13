@@ -9,31 +9,31 @@ You have the following array of employees:
 - "At least one employee greatly exceeded the target!" or "No one exceeded the target by more than 3 tasks."
 */
 
-const employees = [
-  { name: "Alice", tasksCompleted: 10, target: 8 },
-  { name: "Bob", tasksCompleted: 7, target: 8 },
-  { name: "Charlie", tasksCompleted: 12, target: 8 },
-  { name: "David", tasksCompleted: 9, target: 8 },
-];
+// const employees = [
+//   { name: "Alice", tasksCompleted: 10, target: 8 },
+//   { name: "Bob", tasksCompleted: 7, target: 8 },
+//   { name: "Charlie", tasksCompleted: 12, target: 8 },
+//   { name: "David", tasksCompleted: 9, target: 8 },
+// ];
 
-const metTarget = employees.every(
-  (employee) => employee.tasksCompleted >= employee.target
-);
+// const metTarget = employees.every(
+//   (employee) => employee.tasksCompleted >= employee.target
+// );
 
-console.log(
-  metTarget
-    ? `All employees met the target!`
-    : `Some employees did not meet the target.`
-);
+// console.log(
+//   metTarget
+//     ? `All employees met the target!`
+//     : `Some employees did not meet the target.`
+// );
 
-const exceededTarget = employees.some(
-  (employee) => employee.tasksCompleted > employee.target + 3
-);
-console.log(
-  exceededTarget
-    ? `At least one employee greatly exceeded the target!`
-    : `No one exceeded the target by more than 3 tasks.`
-);
+// const exceededTarget = employees.some(
+//   (employee) => employee.tasksCompleted > employee.target + 3
+// );
+// console.log(
+//   exceededTarget
+//     ? `At least one employee greatly exceeded the target!`
+//     : `No one exceeded the target by more than 3 tasks.`
+// );
 
 // ----------------------------------------------------------------------------------------------
 // ----------------------------------------------------------------------------------------------
