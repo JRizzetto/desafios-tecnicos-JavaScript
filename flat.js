@@ -1,3 +1,51 @@
+/* 1 -
+ */
+
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+
+/* 4 - Exercise: “Sales Report Analyzer”
+You are analyzing monthly sales data from different regions.
+Each region reports its weekly sales in nested arrays, like this:
+Your tasks:
+
+Transform all sales numbers into a single-level array, removing all internal arrays.
+
+Keep only the sales values that are greater than or equal to 1000.
+
+Give each remaining sale a 10% bonus, but make sure that no sale exceeds 2000 after the adjustment.
+
+Calculate the total sum of all the adjusted sales.
+
+Show in the console both the final list of sales (after the bonus) and the total amount.
+
+ */
+
+const regionalSales = [
+  [1200, [1500, 800]],
+  [900, [1100, [1300, 1000]]],
+  [[700, 1600], 2000],
+];
+
+const sigleRegionalSales = regionalSales.flat(3);
+
+const greaterValues = sigleRegionalSales.filter((value) => value > 1000);
+
+const saleBonus = greaterValues.map((value) =>
+  value * 1.1 > 2000 ? 2000 : value * 1.1
+);
+console.log(saleBonus);
+
+const totalSum = saleBonus.reduce((acc, value) => (acc += value), 0);
+console.log(`The total sum is: ${totalSum}`);
+
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+
 /* 3 - Exercise: Combining flat(), map(), and filter()
 You manage a system that tracks product ratings from multiple stores.
 Each store records ratings in arrays — but sometimes those arrays have nested arrays (for example, different departments in the same store).
@@ -10,29 +58,29 @@ Your task:
 Show the new ratings array in the console.
  */
 
-const storeRatings = [
-  [4, 5, [3, 6]],
-  [2, [5, 1, [0]]],
-  [[3, 4], 5],
-];
+// const storeRatings = [
+//   [4, 5, [3, 6]],
+//   [2, [5, 1, [0]]],
+//   [[3, 4], 5],
+// ];
 
-const flattenRatings = storeRatings.flat(3);
+// const flattenRatings = storeRatings.flat(3);
 
-const invalidRating = flattenRatings.filter(
-  (value) => value >= 1 && value <= 5
-);
+// const invalidRating = flattenRatings.filter(
+//   (value) => value >= 1 && value <= 5
+// );
 
-const increaseRating = invalidRating.map((value) => {
-  let increaseValue = value + 0.5;
+// const increaseRating = invalidRating.map((value) => {
+//   let increaseValue = value + 0.5;
 
-  if (increaseValue >= 5) {
-    increaseValue = 5;
-  }
+//   if (increaseValue >= 5) {
+//     increaseValue = 5;
+//   }
 
-  return increaseValue;
-});
+//   return increaseValue;
+// });
 
-console.log(increaseRating);
+// console.log(increaseRating);
 
 // ----------------------------------------------------------------------------------------------
 // ----------------------------------------------------------------------------------------------
