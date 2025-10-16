@@ -1,3 +1,51 @@
+/* 9 - Exercise 9 (Destructuring + Default + Nested Arrays)
+Here’s your scenario 👇
+1 - Use a single destructuring statement to extract:
+- companyName → "TechWave"
+- the second employee’s name → "Bob"
+- the first skill of the first employee → "HTML"
+- country with a default value "Portugal" (it doesn’t exist in the object)
+2 - Then print all those variables.
+*/
+
+const company = {
+  name: "TechWave",
+  employees: [
+    {
+      name: "Alice",
+      skills: ["HTML", "CSS", "JavaScript"],
+    },
+    {
+      name: "Bob",
+      skills: ["Python", "Django"],
+    },
+  ],
+  location: {
+    city: "Lisbon",
+  },
+};
+
+const {
+  name: companyName,
+  employees: [
+    {
+      skills: [employeeSkill],
+    },
+    { name: secondEmployee },
+  ],
+  country = "Portugal",
+} = company;
+
+console.log(companyName);
+console.log(secondEmployee);
+console.log(employeeSkill);
+console.log(country);
+
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+
 /* 8 - Exercise 8 (Final Destructuring Challenge)
 You have an e-commerce order object:
 You need to:
@@ -10,40 +58,40 @@ You need to:
 - Order for Maria from São Paulo includes Laptop and Mouse (Use destructuring directly inside the function parameters).
 */
 
-const order = {
-  id: 2025,
-  customer: {
-    name: "Maria",
-    address: {
-      city: "São Paulo",
-      country: "Brazil",
-    },
-  },
-  items: [
-    { product: "Laptop", price: 4500 },
-    { product: "Mouse", price: 150 },
-  ],
-};
+// const order = {
+//   id: 2025,
+//   customer: {
+//     name: "Maria",
+//     address: {
+//       city: "São Paulo",
+//       country: "Brazil",
+//     },
+//   },
+//   items: [
+//     { product: "Laptop", price: 4500 },
+//     { product: "Mouse", price: 150 },
+//   ],
+// };
 
-const {
-  customer: {
-    name: customerName,
-    address: { city },
-  },
-  items: [
-    { product: firstProduct },
-    { product: secondProduct, price: secondPrice },
-  ],
-} = order;
+// const {
+//   customer: {
+//     name: customerName,
+//     address: { city },
+//   },
+//   items: [
+//     { product: firstProduct },
+//     { product: secondProduct, price: secondPrice },
+//   ],
+// } = order;
 
-function showOrder() {
-  return `Order for ${customerName} from ${city} includes ${firstProduct} and ${secondProduct}`;
-}
-console.log(showOrder());
+// function showOrder() {
+//   return `Order for ${customerName} from ${city} includes ${firstProduct} and ${secondProduct}`;
+// }
+// console.log(showOrder());
 
-console.log(customerName);
-console.log(firstProduct);
-console.log(secondPrice);
+// console.log(customerName);
+// console.log(firstProduct);
+// console.log(secondPrice);
 
 // ----------------------------------------------------------------------------------------------
 // ----------------------------------------------------------------------------------------------
