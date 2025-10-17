@@ -1,3 +1,31 @@
+/* Exercise 11: Employee Management System
+You have this data:
+Your tasks:
+1 - Destructure employees and departments from company, collecting the rest of the properties into companyInfo.
+2 - Create a new array called updatedEmployees that spreads all the current employees and adds a new one:
+{ name: "David", role: "Intern", salary: 2000 }
+
+3 - Write a function calculateAverageSalary(...employees) that uses the rest operator and reduce() to calculate the average salary of all employees passed to it.
+*/
+
+const company = {
+  name: "TechCorp",
+  location: "Berlin",
+  employees: [
+    { name: "Alice", role: "Developer", salary: 5000 },
+    { name: "Bob", role: "Designer", salary: 4000 },
+    { name: "Charlie", role: "Manager", salary: 6000 },
+  ],
+  departments: ["IT", "Design", "HR"],
+};
+
+
+
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+
 /* Exercise 10 - Library System
 Your tasks:
 1 - Destructure books and staff from the library, and collect the rest in libraryInfo.
@@ -12,23 +40,39 @@ Your tasks:
 4 - Print libraryInfo, updatedBooks, and updatedLibrary.
 */
 
-const library = {
-  name: "Central Library",
-  location: "New York",
-  books: [
-    { title: "1984", author: "George Orwell", copies: 4 },
-    { title: "Clean Code", author: "Robert C. Martin", copies: 2 },
-    { title: "You Don’t Know JS", author: "Kyle Simpson", copies: 5 },
-  ],
-  staff: [
-    { name: "Alice", role: "Librarian" },
-    { name: "Bob", role: "Assistant" },
-  ],
-};
+// const library = {
+//   name: "Central Library",
+//   location: "New York",
+//   books: [
+//     { title: "1984", author: "George Orwell", copies: 4 },
+//     { title: "Clean Code", author: "Robert C. Martin", copies: 2 },
+//     { title: "You Don’t Know JS", author: "Kyle Simpson", copies: 5 },
+//   ],
+//   staff: [
+//     { name: "Alice", role: "Librarian" },
+//     { name: "Bob", role: "Assistant" },
+//   ],
+// };
 
-function updateLibrary() {
-    
-}
+// function updateLibrary(library) {
+//   const { books, staff, ...libraryInfo } = library;
+
+//   const updatedBooks = [
+//     ...books,
+//     { title: "Eloquent JavaScript", author: "Marijn Haverbeke", copies: 3 },
+//   ];
+
+//   const updatedLibrary = {
+//     ...libraryInfo,
+//     books: updatedBooks,
+//     staff,
+//     established: 1950,
+//   };
+
+//   return updatedLibrary;
+// }
+// const result = updateLibrary(library);
+// console.log(result);
 
 // ----------------------------------------------------------------------------------------------
 // ----------------------------------------------------------------------------------------------
