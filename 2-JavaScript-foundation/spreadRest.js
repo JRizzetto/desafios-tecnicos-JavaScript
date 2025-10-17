@@ -1,3 +1,59 @@
+/* Exercise 12: Online Store Inventory
+You have this object:
+Your tasks:
+1 - Destructure products and staff from store, collecting the rest in storeInfo.
+2 - Create a new array updatedProducts that:
+ - Keeps all the current products
+ - Adds a new product: { name: "Tablet", price: 500, stock: 7 }
+3 - Write a function calculateTotalStock(...products) that uses rest and reduce to calculate the total stock of all products.
+4 - Create a new object updatedStore that:
+ - Spreads storeInfo
+ - Includes updatedProducts as products
+ - Keeps the existing staff
+ - Adds a new property totalStock (calculated from your function)
+Log the updatedStore object.
+
+*/
+
+// const store = {
+//   name: "ShopEase",
+//   location: "London",
+//   products: [
+//     { name: "Laptop", price: 1200, stock: 5 },
+//     { name: "Phone", price: 800, stock: 10 },
+//     { name: "Headphones", price: 150, stock: 20 },
+//   ],
+//   staff: [
+//     { name: "Alice", role: "Manager" },
+//     { name: "Bob", role: "Cashier" },
+//   ],
+// };
+
+// const { products, staff, ...storeInfo } = store;
+
+// const updatedProducts = [...products, { name: "Tablet", price: 500, stock: 7 }];
+
+// function calculateTotalStock(products) {
+//   let result = products.reduce((acc, product) => (acc += product.stock), 0);
+
+//   return result;
+// }
+// const totalStock = calculateTotalStock(updatedProducts);
+
+// const updatedStore = {
+//   ...storeInfo,
+//   products: updatedProducts,
+//   staff,
+//   totalStock: totalStock,
+// };
+
+// console.log(updatedStore);
+
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+
 /* Exercise 11: Employee Management System
 You have this data:
 Your tasks:
@@ -6,20 +62,49 @@ Your tasks:
 { name: "David", role: "Intern", salary: 2000 }
 
 3 - Write a function calculateAverageSalary(...employees) that uses the rest operator and reduce() to calculate the average salary of all employees passed to it.
+
+4 - Create a new object updatedCompany that:
+- reads companyInfo
+- Adds employees: updatedEmployees
+- Adds averageSalary (the value returned by the function)
+
+5 - Log updatedCompany to the console.
 */
 
-const company = {
-  name: "TechCorp",
-  location: "Berlin",
-  employees: [
-    { name: "Alice", role: "Developer", salary: 5000 },
-    { name: "Bob", role: "Designer", salary: 4000 },
-    { name: "Charlie", role: "Manager", salary: 6000 },
-  ],
-  departments: ["IT", "Design", "HR"],
-};
+// const company = {
+//   name: "TechCorp",
+//   location: "Berlin",
+//   employees: [
+//     { name: "Alice", role: "Developer", salary: 5000 },
+//     { name: "Bob", role: "Designer", salary: 4000 },
+//     { name: "Charlie", role: "Manager", salary: 6000 },
+//   ],
+//   departments: ["IT", "Design", "HR"],
+// };
 
+// const { employees, departments, ...companyInfo } = company;
+// const updatedEmployees = [
+//   ...employees,
+//   { name: "David", role: "Intern", salary: 2000 },
+// ];
 
+// function calculateAverageSalary(employees) {
+//   const averageSalary = employees.reduce(
+//     (acc, value) => (acc += value.salary),
+//     0
+//   );
+
+//   return averageSalary;
+// }
+// const result = calculateAverageSalary(employees);
+
+// const updatedCompany = {
+//   ...companyInfo,
+//   updatedEmployees,
+//   averageSalary: result,
+// };
+
+// console.log(updatedCompany);
 
 // ----------------------------------------------------------------------------------------------
 // ----------------------------------------------------------------------------------------------
