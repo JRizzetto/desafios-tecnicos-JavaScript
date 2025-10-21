@@ -1,3 +1,88 @@
+/* Exercise 10
+
+*/
+
+
+
+
+
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+
+
+
+/* Exercise 9 - Arrow “this” vs Regular “this” (Reversed Scenario)
+Create an object called team that has a name property and a members array.
+Inside it, make a method called showMembers() that uses a regular function and an arrow function together.
+
+Here’s the idea (you must fill in the logic):
+
+Goal:
+
+The first forEach (regular function) should log undefined for the name.
+
+The second forEach (arrow function) should correctly show "Developers".
+
+*/
+
+// const team = {
+//   name: "Developers",
+//   members: ["Alice", "Bob", "Charlie"],
+//   showMembers: function () {
+//     this.members.forEach(function (member) {
+//       // regular function here
+//       console.log(`${this.name} has ${member}`);
+//     });
+
+//     this.members.forEach((member) => {
+//       // arrow function here
+//       console.log(`${this.name} has ${member}`);
+//     });
+//   },
+// };
+
+// team.showMembers();
+
+
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+
+
+/* Exercise 8 - Arrow Functions vs Regular Functions with this
+Here’s the key concept before the exercise:
+Regular functions create their own this context (the value of this depends on how the function is called).
+Arrow functions don’t create their own this; they inherit it from the scope where they were defined.
+
+Task:
+1 - Predict what each function will print.
+2 - Then run it in your console to confirm.
+3 - After that, explain why each one behaves differently.
+*/
+
+// const person = {
+//   name: "Alice",
+//   sayNameRegular: function () {
+//     console.log("Regular:", this.name);
+//   },
+//   sayNameArrow: () => {
+//     console.log("Arrow:", this.name);
+//   },
+// };
+
+// person.sayNameRegular(); // 
+// person.sayNameArrow();   // 
+
+
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+
+
 /* Exercise 7 - Map with Arrow Functions
 You have this array of numbers:
 Task:
@@ -5,21 +90,21 @@ Task:
 2 - Use map again, but with an arrow function, to do the same thing.
 */
 
-const numbers = [1, 2, 3, 4, 5];
+// const numbers = [1, 2, 3, 4, 5];
 
-// Regular Function
-function regularNumbers() {
-  const newNumbers = numbers.map((number) => number * 2);
-  return newNumbers;
-}
-const regularResult = regularNumbers();
-console.log(regularResult);
+// // Regular Function
+// function regularNumbers() {
+//   const newNumbers = numbers.map((number) => number * 2);
+//   return newNumbers;
+// }
+// const regularResult = regularNumbers();
+// console.log(regularResult);
 
-// Arrow Function
-const arrownumbers = () => numbers.map((number) => number * 2);
+// // Arrow Function
+// const arrownumbers = () => numbers.map((number) => number * 2);
 
-const arrowResult = arrownumbers();
-console.log(arrowResult);
+// const arrowResult = arrownumbers();
+// console.log(arrowResult);
 
 // ----------------------------------------------------------------------------------------------
 // ----------------------------------------------------------------------------------------------
