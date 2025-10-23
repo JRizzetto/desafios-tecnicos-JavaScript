@@ -1,17 +1,189 @@
-/* Exercise 10
+const user = {
+  name: "Alice",
+  greet() {
+    setTimeout(() => {
+      console.log(`Hello, ${this.name}!`); // Works ✅
+    }, 1000);
+  },
+};
+user.greet();
+
+const user2 = {
+  name: "Alice",
+  greet() {
+    setTimeout(function () {
+      console.log(`Hello, ${this.name}!`); // ❌ undefined
+    }, 1000);
+  },
+};
+
+user2.greet();
+
+/* Exercise 13 - Use this + arrow function + loop
+Create an object called library that:
+1 - Has a name property (string).
+2 - Has a books array, where each book has title and author.
+3 - Has a method listBooks() that prints each book like this:
+City Library has the book "The Hobbit" by J.R.R. Tolkien
+
+Requirements:
+Use an arrow function inside the loop (like you did before).
+Use this correctly to refer to the library name.
+Use for...of to iterate through the books.
+*/
+
+// const library = {
+//   name: "City Library",
+//   books: [
+//     { title: "The black cat", author: "Jaiminho" },
+//     { title: "The curious Incident", author: "Pedro Maia" },
+//     { title: "Hello World", author: "Maria de Deus" },
+//   ],
+//   listBooks: function () {
+//     for (const book of this.books) {
+//       console.log(`${this.name} has the book ${book.title} by ${book.author}
+// `);
+//     }
+//   },
+// };
+
+// library.listBooks();
+
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+
+/* Exercise 12 - Team Management System
+Create an object called team that manages a group of players.
+
+Your object must:
+
+1 - Have a property name → the team name (e.g., "Warriors").
+2 - Have a property players → an empty array to store players.
+3 - Have a method addPlayer(name, position) → adds a player object { name, position } to the array.
+4 - Have a method listPlayers() → prints a message like:
+Team Warriors has player Alice playing as Defender
+
+⚠️ Challenge: Inside listPlayers, try to use an arrow function incorrectly (so it fails with this), and then fix it with the correct function type.
 
 */
 
+// const team = {
+//   name: "Palmeiras",
+//   players: [],
+//   addPlayer: function (name, position) {
+//     this.players.push({ name, position });
+//   },
+//   listPlayers: function () {
+//     this.players.forEach((player) => {
+//       console.log(
+//         `Team ${this.name} has player ${player.name} playing as ${player.position}`
+//       );
+//     });
+//   },
+// };
 
+// team.addPlayer("Flaco Lopez", "Attacker");
+// team.addPlayer("Gustavo Gomez", "Defenser");
+// team.addPlayer("Raphael Veiga", "Midfielder");
 
-
+// console.log(team.players);
+// team.listPlayers();
 
 // ----------------------------------------------------------------------------------------------
 // ----------------------------------------------------------------------------------------------
 // ----------------------------------------------------------------------------------------------
 // ----------------------------------------------------------------------------------------------
 
+/* Exercise 11 - Shopping Cart with Discount
+Create an object called storeCart with the following structure:
+Requirements:
+1 - addItem(product, price, quantity) → should add a new object into items.
+2 - calculateTotal() → should use reduce() to calculate the total (price × quantity).
+3 - getSummary() → should return a template literal string like this:
+Items: 3
+Subtotal: $1350
+Discount: $135
+Final Total: $1215
 
+4 - Use regular functions where this is needed.
+5 - Test your code by adding at least 3 products.
+*/
+
+// const storeCart = {
+//   items: [],
+//   discount: 0.1, // 10% discount
+//   addItem: function (product, price, quantity) {
+//     this.items.push({ product, price, quantity });
+//   },
+//   calculateTotal: function () {
+//     return this.items.reduce(
+//       (acc, cart) => (acc += cart.price * cart.quantity),
+//       0
+//     );
+//   },
+//   getSummary: function () {
+//     const items = this.items.length;
+//     const subtotal = this.calculateTotal();
+//     const discount = this.discount * subtotal;
+//     const finalPrice = subtotal - discount;
+
+//     return `
+//     Items: ${items}
+//     Subtotal: $${subtotal}
+//     Discount: $${discount}
+//     Final Total: $${finalPrice}
+// `;
+//   },
+// };
+
+// storeCart.addItem("wheel", 100, 4);
+// storeCart.addItem("Steering Wheel", 100, 1);
+// storeCart.addItem("Seat", 350, 1);
+
+// console.log(storeCart.items);
+// console.log(`Total: $${storeCart.calculateTotal()}`);
+// console.log(`Total: ${storeCart.getSummary()}`);
+
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+
+/* Exercise 10 - Shopping cart with this
+Create an object called cart that represents a shopping cart.
+It should have:
+
+A property items — an array of objects, where each object has name and price.
+A method addItem that adds a new item to the cart (using this.items.push()).
+A method getTotal that calculates the total price of all items (using this.items.reduce()).
+
+*/
+
+// const cart = {
+//   items: [],
+
+//   addItem: function (product, price) {
+//     this.items.push({ product, price });
+//   },
+
+//   getTotal: function () {
+//     return this.items.reduce((acc, item) => acc + item.price, 0);
+//   },
+// };
+
+// cart.addItem("Laptop", 1200);
+// cart.addItem("Mouse", 50);
+// cart.addItem("Keyboard", 100);
+
+// console.log(cart.items);
+// console.log(`Total: $${cart.getTotal()}`);
+
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
 
 /* Exercise 9 - Arrow “this” vs Regular “this” (Reversed Scenario)
 Create an object called team that has a name property and a members array.
@@ -45,12 +217,10 @@ The second forEach (arrow function) should correctly show "Developers".
 
 // team.showMembers();
 
-
 // ----------------------------------------------------------------------------------------------
 // ----------------------------------------------------------------------------------------------
 // ----------------------------------------------------------------------------------------------
 // ----------------------------------------------------------------------------------------------
-
 
 /* Exercise 8 - Arrow Functions vs Regular Functions with this
 Here’s the key concept before the exercise:
@@ -73,15 +243,13 @@ Task:
 //   },
 // };
 
-// person.sayNameRegular(); // 
-// person.sayNameArrow();   // 
+// person.sayNameRegular(); //
+// person.sayNameArrow();   //
 
-
 // ----------------------------------------------------------------------------------------------
 // ----------------------------------------------------------------------------------------------
 // ----------------------------------------------------------------------------------------------
 // ----------------------------------------------------------------------------------------------
-
 
 /* Exercise 7 - Map with Arrow Functions
 You have this array of numbers:
