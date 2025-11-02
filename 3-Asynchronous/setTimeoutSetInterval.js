@@ -1,3 +1,52 @@
+/* Exercise 5 “Traffic Light Simulator”
+
+🧩 Your task:
+1 - When the program starts, print:
+"🚦 Traffic light simulation started."
+2 - The lights should change in this sequence and timing:
+🟥 Red — stays on for 3 seconds
+🟡 Yellow — stays on for 1 second
+🟩 Green — stays on for 2 seconds
+
+After Green, the sequence repeats forever.
+
+After 3 full cycles, stop the simulation and print:
+"✅ Traffic simulation complete!"
+*/
+
+// function traficLight() {
+//   console.log("🚦 Traffic light simulation started.");
+//   const lights = ["🟥 Red", "🟡 Yellow", "🟩 Green"];
+//   let countLight = 0;
+//   let countCycle = 0;
+//   function countCycles() {
+//     console.log(lights[countLight]);
+//     countCycle++;
+//     setTimeout(() => {
+//       countLight++;
+//       console.log(lights[countLight]);
+//       setTimeout(() => {
+//         countLight++;
+//         console.log(lights[countLight]);
+//         setTimeout(() => {
+//           if (countCycle < 3) {
+//             countLight = 0;
+//             countCycles();
+//           } else {
+//             console.log("✅ Traffic simulation complete!");
+//           }
+//         }, 2000);
+//       }, 1000);
+//     }, 3000);
+//   }
+//   countCycles();
+// }
+// traficLight();
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+
 /* Exercise 4 “Factory Production Line”
 You’ll simulate a small production process that happens step-by-step using setTimeout and setInterval.
 🧩 Your task:
@@ -17,36 +66,36 @@ Then, after 1 more second, print:
 "🚚 Product shipped!"
 */
 
-function factoryProduction() {
-  console.log("🏭 Starting production line...");
+// function factoryProduction() {
+//   console.log("🏭 Starting production line...");
 
-  let count = 0;
+//   let count = 0;
 
-  const messages = [
-    "🔩 Assembling parts...",
-    "🧰 Quality checking...",
-    "📦 Packaging product...",
-  ];
+//   const messages = [
+//     "🔩 Assembling parts...",
+//     "🧰 Quality checking...",
+//     "📦 Packaging product...",
+//   ];
 
-  setTimeout(() => {
-    console.log("⚙️ Machines warming up...");
-    const countMessages = setInterval(() => {
-      count < messages.length ? console.log(messages[count]) : "";
+//   setTimeout(() => {
+//     console.log("⚙️ Machines warming up...");
+//     const countMessages = setInterval(() => {
+//       count < messages.length ? console.log(messages[count]) : "";
 
-      if (count === messages.length - 1) {
-        console.log("✅ Production complete!");
-        clearInterval(countMessages);
+//       if (count === messages.length - 1) {
+//         console.log("✅ Production complete!");
+//         clearInterval(countMessages);
 
-        setTimeout(() => {
-          console.log("🚚 Product shipped!");
-        }, 1000);
-      }
-      count++;
-    }, 1000);
-  }, 2000);
-}
+//         setTimeout(() => {
+//           console.log("🚚 Product shipped!");
+//         }, 1000);
+//       }
+//       count++;
+//     }, 1000);
+//   }, 2000);
+// }
 
-factoryProduction();
+// factoryProduction();
 
 // ----------------------------------------------------------------------------------------------
 // ----------------------------------------------------------------------------------------------
