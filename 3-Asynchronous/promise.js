@@ -1,4 +1,150 @@
-/* Exercise 4 - Online Order Simulation (Promises)
+/* Exercise 5 - Loading Multiple Resources
+- Simulate an app that loads three resources at once:
+🖼️ Images
+🎵 Music
+📜 Text content
+
+- Each resource:
+Takes between 1 and 3 seconds (random).
+Has a 20% chance of failure.
+Returns a message like "✅ Images loaded!" when successful, or rejects with "❌ Failed to load images!".
+
+- Use Promise.all() to:
+Wait for all resources to load before showing "🚀 All resources ready!".
+If any one fails, show the error with "⚠️ Some resources failed to load.".
+*/
+
+function imageSimulate() {
+  const time = Math.ceil(Math.random() * 3) * 1000;
+  const chanceFailure = Math.random() > 0.2;
+
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (chanceFailure) {
+        resolve("✅ Images loaded!");
+      } else {
+        reject("❌ Failed to load images!");
+      }
+    }, time);
+  });
+}
+
+function musicSimulate() {
+  const time = Math.ceil(Math.random() * 3) * 1000;
+  const chanceFailure = Math.random() > 0.2;
+
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (chanceFailure) {
+        resolve("✅ Music loaded!");
+      } else {
+        reject("❌ Failed to load Music!");
+      }
+    }, time);
+  });
+}
+
+function textContent() {
+  const time = Math.ceil(Math.random() * 3) * 1000;
+  const chanceFailure = Math.random() > 0.2;
+
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (chanceFailure) {
+        resolve("✅ Text content loaded!");
+      } else {
+        reject("❌ Failed to load Text content!");
+      }
+    }, time);
+  });
+}
+
+Promise.all([imageSimulate(), musicSimulate(), textContent()])
+  .then((result) => {
+    result.forEach((msg) => console.log(msg));
+    console.log("🚀 All resources ready!");
+  })
+  .catch((error) => console.log("⚠️ Some resources failed to load.", error));
+
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+
+/* Exercise 4 - Movie Streaming Simulation (Promises)
+🎬 Exercise: Movie Streaming Simulation (Promises)
+You’ll simulate what happens when a user tries to stream a movie.
+🧩 Requirements
+Create three functions, each returning a Promise:
+1 - connectToServer()
+- Takes 1–2 seconds.
+- Has a 20% chance to fail (reject("❌ Server connection failed!")).
+- On success: resolve("🌐 Connected to server!").
+2 - loadMovie()
+- Takes 2–3 seconds.
+- Always succeeds: resolve("🎬 Movie loaded successfully!").
+3 - playMovie()
+- Takes 1–2 seconds.
+- Has a 30% chance to fail (reject("⚠️ Playback error!")).
+- On success: resolve("▶️ Movie is now playing!").
+*/
+
+// function connectToServer() {
+//   const time = Math.ceil(Math.random() * 2) * 1000;
+//   const chanceSuccess = Math.random() > 0.2;
+
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       if (chanceSuccess) {
+//         resolve("🌐 Connected to server!");
+//       } else {
+//         reject("❌ Server connection failed!");
+//       }
+//     }, time);
+//   });
+// }
+
+// function loadMovie() {
+//   function timeRandom(min, max) {
+//     return Math.floor(Math.random() * (max - min + 1) + min) * 1000;
+//   }
+//   const time = timeRandom(2, 3);
+
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       resolve("🎬 Movie loaded successfully!");
+//     }, time);
+//   });
+// }
+
+// function playMovie() {
+//   const time = Math.ceil(Math.random() * 2) * 1000;
+//   const chanceSuccess = Math.random() > 0.3;
+
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       if (chanceSuccess) {
+//         resolve("▶️ Movie is now playing!");
+//       } else {
+//         reject("⚠️ Playback error!");
+//       }
+//     }, time);
+//   });
+// }
+
+// connectToServer()
+//   .then(() => loadMovie())
+//   .then(() => playMovie())
+//   .then((result) => console.log("✅ Movie is now playing successfully!"))
+//   .catch((error) => console.log(error))
+//   .finally(() => console.log("🕒 Process finished."));
+
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+
+/* Exercise 3 - Online Order Simulation (Promises)
 Simulate an e-commerce order system using Promises.
 
 🧩 Requirements:
@@ -17,46 +163,46 @@ placeOrder()
 
 */
 
-function placeOrder() {
-  const time = Math.ceil(Math.random() * 2) * 1000;
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve("🛒 Order placed!");
-    }, time);
-  });
-}
+// function placeOrder() {
+//   const time = Math.ceil(Math.random() * 2) * 1000;
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       resolve("🛒 Order placed!");
+//     }, time);
+//   });
+// }
 
-function processPayment() {
-  const time = Math.ceil(Math.random() * 3) * 1000;
-  const randomlyFail = Math.random() > 0.3;
+// function processPayment() {
+//   const time = Math.ceil(Math.random() * 3) * 1000;
+//   const randomlyFail = Math.random() > 0.3;
 
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      if (randomlyFail) {
-        resolve("💳 Payment processed!");
-      } else {
-        reject("❌ Payment failed!");
-      }
-    }, time);
-  });
-}
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       if (randomlyFail) {
+//         resolve("💳 Payment processed!");
+//       } else {
+//         reject("❌ Payment failed!");
+//       }
+//     }, time);
+//   });
+// }
 
-function shipOrder() {
-  const time = Math.ceil(Math.random() * 2) * 1000;
+// function shipOrder() {
+//   const time = Math.ceil(Math.random() * 2) * 1000;
 
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve("📦 Order shipped!");
-    }, time);
-  });
-}
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       resolve("📦 Order shipped!");
+//     }, time);
+//   });
+// }
 
-placeOrder()
-  .then(() => processPayment())
-  .then(() => shipOrder())
-  .then(() => console.log("✅ Order completed successfully!"))
-  .catch((error) => console.log(error))
-  .finally(() => console.log("🕒 Process finished."));
+// placeOrder()
+//   .then(() => processPayment())
+//   .then(() => shipOrder())
+//   .then(() => console.log("✅ Order completed successfully!"))
+//   .catch((error) => console.log(error))
+//   .finally(() => console.log("🕒 Process finished."));
 
 // ----------------------------------------------------------------------------------------------
 // ----------------------------------------------------------------------------------------------
