@@ -1,3 +1,115 @@
+/* Exercise 4 - Weather App Simulation
+You’ll create a small app that:
+1 - Logs in the user.
+2 - Fetches user location (simulated).
+3 - Then, in parallel, fetches:
+- Weather data 🌤️
+- Air quality index 🌫️
+- News headlines 📰
+4 - Finally, shows "✅ All data displayed!" or a failure message if one request fails.
+*/
+
+// function loginUser(username, password) {
+//   const time = Math.ceil(Math.random() * 2) * 1000;
+//   const chanceFail = Math.random() > 0.2;
+
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       if (chanceFail && username && password) {
+//         resolve("👤 User logged in!");
+//       } else {
+//         reject("❌ Login fail");
+//       }
+//     }, time);
+//   });
+// }
+
+// function locationFetched() {
+//   const time = Math.ceil(Math.random() * 2) * 1000;
+//   const chanceFail = Math.random() > 0.2;
+
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       if (chanceFail) {
+//         resolve("📍 Location fetched!");
+//       } else {
+//         reject("❌ Location fetched fail. Do your location is turn on?");
+//       }
+//     }, time);
+//   });
+// }
+
+// function weatherData() {
+//   const time = Math.ceil(Math.random() * 2) * 1000;
+//   const chanceFail = Math.random() > 0.2;
+
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       if (chanceFail) {
+//         resolve("🌤️ Weather data loaded!");
+//       } else {
+//         reject("❌ Weather data fail. Do your location is turn on?");
+//       }
+//     }, time);
+//   });
+// }
+
+// function airQuality() {
+//   const time = Math.ceil(Math.random() * 2) * 1000;
+//   const chanceFail = Math.random() > 0.2;
+
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       if (chanceFail) {
+//         resolve("🌫️ Air quality data loaded!");
+//       } else {
+//         reject("❌ Air quality data fail");
+//       }
+//     }, time);
+//   });
+// }
+
+// function newsHeadlines() {
+//   const time = Math.ceil(Math.random() * 2) * 1000;
+//   const chanceFail = Math.random() > 0.2;
+
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       if (chanceFail) {
+//         resolve("📰 News headlines loaded!");
+//       } else {
+//         reject("❌ News headlines don't loaded, something fail");
+//       }
+//     }, time);
+//   });
+// }
+
+// async function allDatas() {
+//   try {
+//     const login = await loginUser("username", "password");
+//     console.log(login);
+
+//     const locFetched = await locationFetched();
+//     console.log(locFetched);
+
+//     const parallel = await Promise.all([
+//       weatherData(),
+//       airQuality(),
+//       newsHeadlines(),
+//     ]);
+//     parallel.forEach((element) => console.log(element));
+//   } catch (error) {
+//     console.log(error);
+//   }
+//   console.log("✅ All data displayed!");
+// }
+// allDatas();
+
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+
 /* Exercise 3 - Advanced Async/Await with Multiple Dashboard Widgets
 You’ll simulate a dashboard loading scenario where some parts can load in parallel:
 📝 Instructions
@@ -19,69 +131,69 @@ Then call loadDashboardWidgets().
 Finish with "✅ Dashboard fully ready!" if everything succeeds.
 */
 
-function loadWidgetA(username, password) {
-  const time = Math.ceil(Math.random() * 3) * 1000;
-  const chances = Math.random() > 0.2;
+// function loadWidgetA(username, password) {
+//   const time = Math.ceil(Math.random() * 3) * 1000;
+//   const chances = Math.random() > 0.2;
 
-  return new Promise((resolve, reject) =>
-    setTimeout(() => {
-      if (chances && username && password) {
-        resolve("📊 Widget A loaded!");
-      } else {
-        reject("❌ Something A wrong!");
-      }
-    }, time)
-  );
-}
+//   return new Promise((resolve, reject) =>
+//     setTimeout(() => {
+//       if (chances && username && password) {
+//         resolve("📊 Widget A loaded!");
+//       } else {
+//         reject("❌ Something A wrong!");
+//       }
+//     }, time)
+//   );
+// }
 
-function loadWidgetB(username, password) {
-  function randomNumber(min, max) {
-    return Math.floor(Math.random() * (max - min + 1 + min) * 1000);
-  }
-  const time = randomNumber(2, 4);
+// function loadWidgetB(username, password) {
+//   function randomNumber(min, max) {
+//     return Math.floor(Math.random() * (max - min + 1 + min) * 1000);
+//   }
+//   const time = randomNumber(2, 4);
 
-  const chances = Math.random() > 0.2;
+//   const chances = Math.random() > 0.2;
 
-  return new Promise((resolve, reject) =>
-    setTimeout(() => {
-      if (chances && username && password) {
-        resolve("📊 Widget B loaded!");
-      } else {
-        reject("❌ Something B wrong!");
-      }
-    }, time)
-  );
-}
+//   return new Promise((resolve, reject) =>
+//     setTimeout(() => {
+//       if (chances && username && password) {
+//         resolve("📊 Widget B loaded!");
+//       } else {
+//         reject("❌ Something B wrong!");
+//       }
+//     }, time)
+//   );
+// }
 
-function loadWidgetC(username, password) {
-  const time = Math.ceil(Math.random() * 2) * 1000;
-  const chances = Math.random() > 0.2;
+// function loadWidgetC(username, password) {
+//   const time = Math.ceil(Math.random() * 2) * 1000;
+//   const chances = Math.random() > 0.2;
 
-  return new Promise((resolve, reject) =>
-    setTimeout(() => {
-      if (chances && username && password) {
-        resolve("📊 Widget C loaded!");
-      } else {
-        reject("❌ Something C wrong!");
-      }
-    }, time)
-  );
-}
+//   return new Promise((resolve, reject) =>
+//     setTimeout(() => {
+//       if (chances && username && password) {
+//         resolve("📊 Widget C loaded!");
+//       } else {
+//         reject("❌ Something C wrong!");
+//       }
+//     }, time)
+//   );
+// }
 
-async function loadDashboardWidgets() {
-  try {
-    const results = await Promise.all([
-      loadWidgetA("usernameA", "passwordA"),
-      loadWidgetB("usernameB", "passwordB"),
-      loadWidgetC("usernameC", "passwordC"),
-    ]);
-    results.forEach((msg) => console.log(msg));
-  } catch (error) {
-    console.log(error);
-  }
-  console.log("✅ Dashboard fully ready!");
-}
-loadDashboardWidgets();
+// async function loadDashboardWidgets() {
+//   try {
+//     const results = await Promise.all([
+//       loadWidgetA("usernameA", "passwordA"),
+//       loadWidgetB("usernameB", "passwordB"),
+//       loadWidgetC("usernameC", "passwordC"),
+//     ]);
+//     results.forEach((msg) => console.log(msg));
+//   } catch (error) {
+//     console.log(error);
+//   }
+//   console.log("✅ Dashboard fully ready!");
+// }
+// loadDashboardWidgets();
 
 // ----------------------------------------------------------------------------------------------
 // ----------------------------------------------------------------------------------------------
