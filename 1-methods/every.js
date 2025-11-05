@@ -1,3 +1,29 @@
+let arrayTeste = [
+  {
+    userId: 1,
+    id: 1,
+    title: "delectus aut autem",
+    completed: true,
+  },
+  {
+    userId: 1,
+    id: 2,
+    title: "quis ut nam facilis et officia qui",
+    completed: true,
+  },
+  {
+    userId: 1,
+    id: 3,
+    title: "fugiat veniam minus",
+    completed: true,
+  },
+];
+
+const noPendingTask = arrayTeste.every((e) => e.completed === true);
+if (noPendingTask) {
+  console.log("All tasks completed!");
+}
+
 /* 2 - Exercise — Employee Performance Review
 You have the following array of employees:
 

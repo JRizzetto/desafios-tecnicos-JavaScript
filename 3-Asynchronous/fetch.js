@@ -1,3 +1,140 @@
+/* 🧩 Exercise 8 - Filter Todos and Users
+Goal: Practice fetch(), async/await, filtering, and nested logic.
+
+1 - Fetch data from:
+https://jsonplaceholder.typicode.com/users
+https://jsonplaceholder.typicode.com/todos
+2 - Find the user named “Clementine Bauch”.
+3 - Filter all todos (tasks) that belong to that user (todo.userId === user.id).
+4 - Separate them into completed and pending tasks.
+5 - Log the user’s name and list:
+✅ All completed tasks.
+⏳ All pending tasks.
+6 - If the user has no pending tasks, print "All tasks completed!".
+*/
+
+async function fetchDataForm(username) {
+  try {
+    // 1 - Fetch data from:
+    const [usersApi, todosApi] = await Promise.all([
+      fetch("https://jsonplaceholder.typicode.com/users"),
+      fetch("https://jsonplaceholder.typicode.com/todos"),
+    ]);
+
+    const [users, todos] = await Promise.all([
+      usersApi.json(),
+      todosApi.json(),
+    ]);
+
+    // 2 - Find the user named “Clementine Bauch”.
+    const searchUser = users.find((u) => u.name === username);
+
+    // 3 - Filter all todos (tasks) that belong to that user (todo.userId === user.id).
+    const allTodos = todos.filter((e) => e.userId === searchUser.id);
+
+    // 4 - Separate them into completed and pending tasks.
+    let finishedtasks = [];
+    let pendingtasks = [];
+    for (const todo of allTodos) {
+      if (todo.completed) {
+        finishedtasks.push(todo.title);
+      } else {
+        pendingtasks.push(todo.title);
+      }
+    }
+
+    console.log(`\n👤 User: ${searchUser.name}`);
+
+    const noPendingTask = allTodos.every((e) => e.completed === true);
+    if (noPendingTask) {
+      console.log("All tasks completed!");
+      return;
+    }
+
+    console.log("✅ All completed tasks:");
+    finishedtasks.forEach((e) => console.log("-", e));
+
+    console.log("\n⏳ All pending tasks:");
+    pendingtasks.forEach((e) => console.log("-", e));
+  } catch (error) {
+    console.error("❌ Error fetching data:", error);
+  }
+}
+fetchDataForm("Clementine Bauch");
+
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+
+/* 
+Exercise 7 - “User Posts and Comments”
+Here’s your next challenge using fetch() + async/await + filtering + nested logic 👇
+
+1 - You’ll use data from the same API (https://jsonplaceholder.typicode.com/).
+Your goals:
+- Fetch users, posts, and comments using Promise.all().
+- Find the user named “Ervin Howell”.
+- Filter all posts made by that user.
+- For each of those posts, filter all comments that belong to it (comment.postId === post.id).
+
+Display the following in the console:
+👤 User: Ervin Howell
+📝 Post Title: ...
+💬 Comment: ...
+💬 Comment: ...
+(and so on for each post)
+*/
+
+// - Fetch users, posts, and comments using Promise.all().
+// async function fetchUsers(username) {
+//   const [usersApi, postApi, commentsApi] = await Promise.all([
+//     fetch("https://jsonplaceholder.typicode.com/users"),
+//     fetch("https://jsonplaceholder.typicode.com/posts"),
+//     fetch("https://jsonplaceholder.typicode.com/comments"),
+//   ]);
+
+//   const [users, posts, comments] = await Promise.all([
+//     usersApi.json(),
+//     postApi.json(),
+//     commentsApi.json(),
+//   ]);
+
+//   // Find the user named “Ervin Howell”
+//   const searchUser = users.find((element) => element.name === username);
+//   if (!searchUser) {
+//     console.log("❌ User not found:", username);
+//     return;
+//   }
+
+//   // Filter all posts made by that user
+//   const userPosts = posts.filter((id) => id.userId === searchUser.id);
+
+//   console.log(`👤 User: ${searchUser.name}`);
+//   for (const post of userPosts) {
+//     console.log(`\n📝 Post Title: ${post.title}`);
+//     console.log(`   Post body: ${post.body}`);
+
+//     // Filter comments for this specific post
+//     const postComments = comments.filter((c) => c.postId === post.id);
+
+//     if (postComments.length === 0) {
+//       console.log("   💬 No comments for this post.");
+//     } else {
+//       for (const comment of postComments) {
+//         console.log(`   💬 Comment by ${comment.name}: ${comment.body}`);
+//       }
+//     }
+//   }
+// }
+
+// fetchUsers("Ervin Howell");
+
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+
 /* Exercise 6 - Filtering Data from an API
 You’ll work with this public API again:
 https://jsonplaceholder.typicode.com
@@ -12,28 +149,29 @@ https://jsonplaceholder.typicode.com
 📝 Post: sunt aut facere repellat provident occaecati excepturi optio reprehenderit
 */
 
-async function filteringData() {
-  const [userApi, postApi] = await Promise.all([
-    fetch("https://jsonplaceholder.typicode.com/users"),
-    fetch("https://jsonplaceholder.typicode.com/posts"),
-  ]);
+// async function filteringData() {
+//   const [userApi, postApi] = await Promise.all([
+//     fetch("https://jsonplaceholder.typicode.com/users"),
+//     fetch("https://jsonplaceholder.typicode.com/posts"),
+//   ]);
 
-  const [users, posts] = await Promise.all([userApi.json(), postApi.json()]);
+//   const [users, posts] = await Promise.all([userApi.json(), postApi.json()]);
 
-  const specificname = users.find(
-    (element) => element.name === "Leanne Graham"
-  );
+//   const specificname = users.find(
+//     (element) => element.name === "Leanne Graham"
+//   );
 
-  const getIDpost = specificname.id;
-  const specificPost = posts.filter((element) => element.userId === getIDpost);
+//   const getIDpost = specificname.id;
+//   const specificPost = posts.filter((element) => element.userId === getIDpost);
 
-  console.log(`🧑 User: ${specificname.name}`);
+//   console.log(`🧑 User: ${specificname.name}`);
 
-  for (const post of specificPost) {
-    console.log(`Post: ${post.body}`);
-  }
-}
-filteringData();
+//   for (const post of specificPost) {
+//     console.log(`Post: ${post.body}`);
+//   }
+// }
+// filteringData();
+
 // ----------------------------------------------------------------------------------------------
 // ----------------------------------------------------------------------------------------------
 // ----------------------------------------------------------------------------------------------
