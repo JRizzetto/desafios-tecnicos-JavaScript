@@ -1,4 +1,68 @@
 /*
+🟢 Exercise 5 — Filtering and Transforming Data
+🧩 Problem:
+Create a function called doublePositiveNumbers() that receives an array of numbers and returns 
+a new array containing only the positive numbers, but each one doubled.
+You must:
+Use filter() to keep only positive numbers.
+Use map() to double each of them.
+Not modify the original array.
+*/
+
+function doublePositiveNumbers(numbers = []) {
+  const filterNumbers = numbers.filter((number) => number > 0);
+  return filterNumbers.map((number) => number * 2);
+}
+console.log(doublePositiveNumbers([2, -5, 10, -3, 0, 8]));
+console.log(doublePositiveNumbers([-1, -2, -3]));
+console.log(doublePositiveNumbers([5, 15]));
+
+console.log("--------------------------------------------");
+
+const doublePNumbers = (numbers = []) =>
+  numbers.filter((number) => number > 0).map((number) => number * 2);
+
+console.log(doublePNumbers([2, -5, 10, -3, 0, 8]));
+console.log(doublePNumbers([-1, -2, -3]));
+console.log(doublePNumbers([5, 15]));
+
+// -----------------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------
+
+/*
+Exercise 4 — Filtering Numbers
+🧩 Problem:
+Create a function called getPositiveNumbers() that receives an array of numbers and returns a 
+new array containing only the positive numbers (greater than zero).
+
+You must use the filter() method — no loops allowed this time.
+*/
+
+// function getPositiveNumbers(arrayNumbers = []) {
+//   return arrayNumbers.filter((number) => number > 0);
+// }
+
+// console.log(getPositiveNumbers([2, -5, 10, -3, 0, 8]));
+// console.log(getPositiveNumbers([-1, -2, -3]));
+// console.log(getPositiveNumbers([5, 15, 25]));
+
+// console.log('--------------------------------------------')
+
+// const getPositiveArrowFunction = (numbers = []) =>
+//   numbers.filter((number) => number > 0);
+
+// console.log(getPositiveArrowFunction([2, -5, 10, -3, 0, 8]));
+// console.log(getPositiveArrowFunction([-1, -2, -3]));
+// console.log(getPositiveArrowFunction([5, 15, 25]));
+
+// -----------------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------
+
+/*
 Exercise 3 — Separate Even and Odd Numbers
 🧩 Problem:
 Create a function called separateEvenOdd() that receives an array of numbers and returns an object with two properties:
@@ -8,29 +72,29 @@ odds: an array containing all odd numbers
 You must build both arrays manually using a loop — no array methods like filter() yet.
 */
 
-function separateEvenOdd(numberArray = []) {
-  const separatedNumbers = {
-    evens: [],
-    odds: [],
-  };
+// function separateEvenOdd(numberArray = []) {
+//   const separatedNumbers = {
+//     evens: [],
+//     odds: [],
+//   };
 
-  for (const number of numberArray) {
-    if (number % 2 === 0) {
-      separatedNumbers.evens.push(number);
-    } else {
-      separatedNumbers.odds.push(number);
-    }
-  }
+//   for (const number of numberArray) {
+//     if (number % 2 === 0) {
+//       separatedNumbers.evens.push(number);
+//     } else {
+//       separatedNumbers.odds.push(number);
+//     }
+//   }
 
-  return separatedNumbers;
-}
+//   return separatedNumbers;
+// }
 
-console.log(separateEvenOdd([1, 2, 3, 4, 5, 6]));
-// ➞ { evens: [2, 4, 6], odds: [1, 3, 5] }
-console.log(separateEvenOdd([10, 15, 20, 25]));
-// ➞ { evens: [10, 20], odds: [15, 25] }
-console.log(separateEvenOdd([]));
-// ➞ { evens: [], odds: [] }
+// console.log(separateEvenOdd([1, 2, 3, 4, 5, 6]));
+// // ➞ { evens: [2, 4, 6], odds: [1, 3, 5] }
+// console.log(separateEvenOdd([10, 15, 20, 25]));
+// // ➞ { evens: [10, 20], odds: [15, 25] }
+// console.log(separateEvenOdd([]));
+// // ➞ { evens: [], odds: [] }
 
 // -----------------------------------------------------------------------------------------------
 // -----------------------------------------------------------------------------------------------
