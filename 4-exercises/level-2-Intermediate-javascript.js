@@ -38,7 +38,7 @@ console.log(calculateCategoryTotal(items, "clothes"));
 // -----------------------------------------------------------------------------------------------
 
 /*
-Exercise 8 — Combine filter + map + reduce
+Exercise 8.1 — Combine filter + map + reduce
 Create a function processNumbers(numbers) that:
 1 - Filters only the numbers greater than 0
 2 - Maps each remaining number to its square (number × number)
@@ -107,7 +107,7 @@ showing how many times each number appears.
 // -----------------------------------------------------------------------------------------------
 
 /*
-🟡 Exercise 8 — Counting and Grouping Elements with reduce()
+🟡 Exercise 7.4 — Counting and Grouping Elements with reduce()
 Problem
 Create a function called countOccurrences() that receives an array of strings and returns an object showing how many times each string appears.
 
