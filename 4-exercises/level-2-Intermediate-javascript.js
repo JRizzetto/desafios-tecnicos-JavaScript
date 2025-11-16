@@ -1,4 +1,95 @@
 /*
+Exercise 10 — Group Objects by Category (reduce)
+You will receive an array of products similar to this:
+
+groupByCategory(products);
+
+// ➞ {
+  electronics: [
+    { name: "Laptop", category: "electronics", price: 3000 },
+    { name: "Mouse", category: "electronics", price: 100 },
+    { name: "TV", category: "electronics", price: 2500 }
+  ],
+  clothes: [
+    { name: "Shirt", category: "clothes", price: 80 },
+    { name: "Pants", category: "clothes", price: 120 }
+  ]
+}
+
+🧠 Rules:
+Use ONLY reduce (no map or filter).
+The accumulator must start as {}.
+Each category must become a key (electronics, clothes, etc).
+Each value must be an array of objects belonging to that category.
+*/
+
+const products = [
+  { name: "Laptop", category: "electronics", price: 3000 },
+  { name: "Shirt", category: "clothes", price: 80 },
+  { name: "Mouse", category: "electronics", price: 100 },
+  { name: "Pants", category: "clothes", price: 120 },
+  { name: "TV", category: "electronics", price: 2500 },
+];
+
+function orderCategory(items) {
+  return items.reduce((acc, product) => {
+    if (acc[product]) {
+      acc += 1;
+    }
+
+    return acc;
+  }, {});
+}
+
+console.log(orderCategory(products));
+
+// -----------------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------
+
+/*
+Exercise 9.1 — Working With Arrays of Objects (filter + map + reduce)
+You will receive an array of products, each with:
+- name (string)
+- price (number)
+- category (string)
+
+🔹 Your task:
+Create a function calculateCategoryTotal(products, category) that:
+1 - Filters only the products matching the given category
+2 - Maps the filtered items to extract their price
+3 - Reduces to get the sum of all prices of that category
+*/
+
+// const items = [
+//   { name: "Laptop", price: 3000, category: "electronics" },
+//   { name: "Mouse", price: 100, category: "electronics" },
+//   { name: "Shirt", price: 80, category: "clothes" },
+//   { name: "Headset", price: 200, category: "electronics" },
+//   { name: "Pants", price: 120, category: "clothes" },
+// ];
+
+// function calculateCategoryTotal(products, category) {
+//   return products
+//     .filter((item) => item.category === category)
+//     .map((item) => {
+//       console.log(`Products: ${item.name}(${item.price})`);
+//       return item.price;
+//     })
+//     .reduce((acc, price) => {
+//       return acc + price;
+//     }, 0);
+// }
+
+// console.log(calculateCategoryTotal(items, "electronics"));
+
+// -----------------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------
+
+/*
 Exercise 9 — Working With Arrays of Objects (filter + map + reduce)
 You will receive an array of products, each with:
 - name (string)
@@ -12,25 +103,25 @@ Create a function calculateCategoryTotal(products, category) that:
 3 - Reduces to get the sum of all prices of that category
 */
 
-const items = [
-  { name: "Laptop", price: 3000, category: "electronics" },
-  { name: "Mouse", price: 100, category: "electronics" },
-  { name: "Shirt", price: 80, category: "clothes" },
-  { name: "Headset", price: 200, category: "electronics" },
-  { name: "Pants", price: 120, category: "clothes" },
-];
+// const items = [
+//   { name: "Laptop", price: 3000, category: "electronics" },
+//   { name: "Mouse", price: 100, category: "electronics" },
+//   { name: "Shirt", price: 80, category: "clothes" },
+//   { name: "Headset", price: 200, category: "electronics" },
+//   { name: "Pants", price: 120, category: "clothes" },
+// ];
 
-function calculateCategoryTotal(products, category) {
-  return products
-    .filter((item) => item.category === category)
-    .map((item) => {
-      console.log(`Product: ${item.name} (${item.price})`);
-      return item.price;
-    })
-    .reduce((acc, price) => acc + price, 0);
-}
+// function calculateCategoryTotal(products, category) {
+//   return products
+//     .filter((item) => item.category === category)
+//     .map((item) => {
+//       console.log(`Product: ${item.name} (${item.price})`);
+//       return item.price;
+//     })
+//     .reduce((acc, price) => acc + price, 0);
+// }
 
-console.log(calculateCategoryTotal(items, "clothes"));
+// console.log(calculateCategoryTotal(items, "clothes"));
 
 // -----------------------------------------------------------------------------------------------
 // -----------------------------------------------------------------------------------------------
