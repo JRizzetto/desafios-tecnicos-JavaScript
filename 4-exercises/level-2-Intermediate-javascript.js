@@ -1,3 +1,139 @@
+
+/*
+Exercise 10.5 — Group objects by a property (object accumulator)
+Now we increase difficulty a bit.
+Using reduce, return this:
+{
+  adult: ["Alice", "Carol"],
+  minor: ["Bob", "Dave"]
+}
+*/
+
+// const people = [
+//   { name: "Alice", age: 22 },
+//   { name: "Bob", age: 17 },
+//   { name: "Carol", age: 30 },
+//   { name: "Dave", age: 15 },
+// ];
+
+// const adultPeople = people.reduce(
+//   (acc, item) => {
+//     if (item.age >= 18) {
+//       acc.adult.push(item.name);
+//     } else {
+//       acc.minor.push(item.name);
+//     }
+//     return acc;
+//   },
+//   { adult: [], minor: [] }
+// );
+
+// console.log(adultPeople);
+
+// -----------------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------
+
+/*
+Exercise 10.4 — Sum values inside objects
+Using reduce, return the total price of all items.
+*/
+
+// const cart = [
+//   { name: "Apple", price: 4 },
+//   { name: "Banana", price: 2 },
+//   { name: "Orange", price: 5 },
+// ];
+
+// const countPrice = cart.reduce((acc, price) => acc + price.price, 0);
+
+// console.log(countPrice);
+
+// -----------------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------
+
+/*
+Exercise 10.3 - Count how many numbers are even and odd
+*/
+
+// const numbers = [1, 4, 7, 10, 12, 3];
+
+// function evenOddNumbers(numbers) {
+//   return numbers.reduce(
+//     (acc, number) => {
+//       if (number % 2 === 0) {
+//         acc.even++;
+//       } else {
+//         acc.odd++;
+//       }
+
+//       return acc;
+//     },
+//     { even: 0, odd: 0 }
+//   );
+// }
+
+// console.log(evenOddNumbers(numbers));
+
+// -----------------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------
+
+/*
+Exercise 10.2 - (Very Simple):
+Using reduce, return the sum of all numbers in this array:
+*/
+
+// const numbers = [4, 7, 1, 3];
+
+// function sumNumbers(numbers) {
+//   return numbers.reduce((acc, number) => acc + number, 0);
+// }
+// console.log(sumNumbers(numbers));
+
+// -----------------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------
+
+/*
+Exercise 10.1 — Group Numbers by “Even” or “Odd”
+Create a function groupByParity(numbers) that groups numbers into:
+"even" → all even numbers
+"odd" → all odd numbers
+Using only reduce (no map, no filter).
+*/
+
+// const numbers = [1, 2, 3, 4, 5, 6];
+
+// function groupByParity(numbers) {
+//   return numbers.reduce(
+//     (acc, number) => {
+//       if (number % 2 === 0) {
+//         acc[even] = [];
+//         acc.even.push(number);
+//       } else {
+//         acc[odd] = [];
+//         acc.odd.push(number);
+//       }
+
+//       return acc;
+//     },
+//     { even: [], odd: [] }
+//   );
+// }
+
+// console.log(groupByParity(numbers));
+
+// -----------------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------
+
 /*
 Exercise 10 — Group Objects by Category (reduce)
 You will receive an array of products similar to this:
@@ -23,25 +159,25 @@ Each category must become a key (electronics, clothes, etc).
 Each value must be an array of objects belonging to that category.
 */
 
-const products = [
-  { name: "Laptop", category: "electronics", price: 3000 },
-  { name: "Shirt", category: "clothes", price: 80 },
-  { name: "Mouse", category: "electronics", price: 100 },
-  { name: "Pants", category: "clothes", price: 120 },
-  { name: "TV", category: "electronics", price: 2500 },
-];
+// const products = [
+//   { name: "Laptop", category: "electronics", price: 3000 },
+//   { name: "Shirt", category: "clothes", price: 80 },
+//   { name: "Mouse", category: "electronics", price: 100 },
+//   { name: "Pants", category: "clothes", price: 120 },
+//   { name: "TV", category: "electronics", price: 2500 },
+// ];
 
-function orderCategory(items) {
-  return items.reduce((acc, product) => {
-    if (acc[product]) {
-      acc += 1;
-    }
-
-    return acc;
-  }, {});
-}
-
-console.log(orderCategory(products));
+// function orderCategory(items) {
+//   return items.reduce((acc, product) => {
+//     const category = product.category;
+//     if (!acc[category]) {
+//       acc[category] = [];
+//     }
+//     acc[category].push(product);
+//     return acc;
+//   }, {});
+// }
+// console.log(orderCategory(products));
 
 // -----------------------------------------------------------------------------------------------
 // -----------------------------------------------------------------------------------------------
