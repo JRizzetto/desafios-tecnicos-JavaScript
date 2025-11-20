@@ -1,4 +1,72 @@
 /*
+
+*/
+
+
+
+// -----------------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------
+
+
+/*
+EXERCISE 16 — Closure + Reduce + Grouping + Custom Logic
+You're now comfortable creating closures and transforming arrays.
+This challenge will combine:
+Closures, Filtering, Grouping, Reducing, Dynamic state
+
+Problem
+Create a function createCart() that returns an object representing a shopping cart.
+The cart should NOT expose the internal array directly, only methods.
+Each cart instance must store items internally and allow:
+
+*/
+
+// function createCart() {
+//   let shoppingCart = [];
+
+//   return {
+//     additem(item, value, qty) {
+//       shoppingCart.push({ item: item, value: value, quatidade: qty });
+//     },
+//     getSummary() {
+//       return shoppingCart.reduce((acc, item) => {
+//         acc[item.item] = (acc[item.item] || 0) + item.quatidade;
+
+//         return acc;
+//       }, {});
+//     },
+//     getTotal() {
+//       const totalCount = shoppingCart.reduce(
+//         (acc, item) => acc + item.quatidade * item.value,
+//         0
+//       );
+//       return totalCount;
+//     },
+//     clear() {
+//       shoppingCart = [];
+//       console.log(shoppingCart);
+//     },
+//   };
+// }
+
+// const cart = createCart();
+
+// cart.additem("Mouse", 100, 2);
+// cart.additem("Keyboard", 250, 1);
+// cart.additem("Mouse", 100, 1);
+
+// console.log(cart.getSummary());
+// console.log(cart.getTotal());
+// cart.clear();
+
+// -----------------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------
+
+/*
 Exercise 15 — Curried Tax Calculator
 You need to create a curried function that calculates the final price including tax for different countries.
 Requirements
@@ -13,30 +81,35 @@ Rules
 - Should work for any country in the tax object
 */
 
-function taxCalculator(country) {
-  const taxes = {
-    USA: 0.07,
-    EU: 0.2,
-    BRA: 0.12,
-  };
+// function taxCalculator(country) {
+//   const taxes = {
+//     USA: 0.07,
+//     EU: 0.2,
+//     BRA: 0.12,
+//   };
 
-  return function (value) {
-    for (let taxe in taxes) {
-      if (country === taxe) {
-        return value + value * taxes[taxe];
-      }
-    }
-  };
-}
+//   return function (value) {
+//     try {
+//       if (!taxes[country]) {
+//         throw new Error(`Unknown country: ${country}`);
+//       }
+//     } catch (error) {
+//       console.log("Error message: " + error);
+//       return null;
+//     }
 
-const usaTaxe = taxCalculator("USA");
-console.log(usaTaxe(100).toFixed(2));
+//     return value + value * taxes[country];
+//   };
+// }
 
-const euTax = taxCalculator("EU");
-console.log(euTax(50).toFixed(2));
+// const usaTaxe = taxCalculator("BRAZIL");
+// console.log(usaTaxe(100).toFixed(2));
 
-const braTax = taxCalculator("BRA");
-console.log(braTax(200).toFixed(2));
+// const euTax = taxCalculator("EU");
+// console.log(euTax(50).toFixed(2));
+
+// const braTax = taxCalculator("BRA");
+// console.log(braTax(200).toFixed(2));
 
 // -----------------------------------------------------------------------------------------------
 // -----------------------------------------------------------------------------------------------
