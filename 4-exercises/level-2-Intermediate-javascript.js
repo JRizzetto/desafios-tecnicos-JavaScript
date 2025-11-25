@@ -1,14 +1,55 @@
 /*
+Exercise 17 — Closures + State + Chaining (Intermediate+)
+This challenge introduces method chaining (like .map().filter().reduce()), but applied to your own object API using closures.
+🧩 Problem
+Create a function createScoreTracker() that stores scores of players privately and allows chained operations like this:
+📌 Requirements
+Store data using closures (no global variables)
+add() should return this → enabling chaining
+Must group scores per player
+Implement a method to get the leader:
 
+Method: 
+.add(player, points)
+.getScores()
+.getLeader()
+.reset()
 */
 
+function createScoreTracker() {
+  let totalScore = [];
 
+  return {
+    add(player, points) {
+      totalScore.push({ players: player, points: points });
+    },
+    getScores() {
+      return totalScore.reduce((acc, item) => {
+        acc[item.players] = (acc[item.players] || 0) + item.points;
+
+        return acc;
+      }, {});
+    },
+    getLeader() {
+      return totalScore.filter((player) => console.log(player));
+    },
+  };
+}
+
+const score = createScoreTracker();
+
+score.add("Messi", 3);
+score.add("Ronaldo", 2);
+score.add("Ronaldo", 2);
+
+// console.log(score.getScores());
+
+console.log(score.getLeader());
 
 // -----------------------------------------------------------------------------------------------
 // -----------------------------------------------------------------------------------------------
 // -----------------------------------------------------------------------------------------------
 // -----------------------------------------------------------------------------------------------
-
 
 /*
 EXERCISE 16 — Closure + Reduce + Grouping + Custom Logic
